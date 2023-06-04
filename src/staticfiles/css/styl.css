@@ -1,0 +1,36 @@
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+
+}
+
+.container{
+    width: 600px;
+}
+
+button{
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: #B6777E;
+    border: 0px solid #000;
+    cursor: pointer;
+}
+
+.back, .update{
+    background-color: #3498DB;
+}
+
+.delete{
+    background-color: #F65F6F ;
+}
+button>a{
+    color:white;
+    text-decoration: none;
+     ;
+    
+}

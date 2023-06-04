@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Mes articles
+{% endblock title %}
+
+
+{% block content %}
+
+    {% if request.user.is_authenticated %}
+        <button>
+            <a href="{% url 'posts:create-article' %}"> Ajouter </a>
+        </button>
+    {% endif %}
+    
+    
+    {% for post in posts %}
+
+        <h2> {{post.title}} </h2>
+        
+        {% if post.published %}
+            <p> {{post.publier}}  le {{post.created_on}} </p>
+        {% else %}
+
+            <p> {{post.publier}} </p>
+            
+        {% endif %}
+        <p> {{post.content|truncatewords:50}} </p>
+        <form action="{% url 'posts:detail' post.slug %}">
+            <button type="submit">Voir plus</button>
+        </form>
+    {% endfor %}
+        
+{% endblock content %}
+    

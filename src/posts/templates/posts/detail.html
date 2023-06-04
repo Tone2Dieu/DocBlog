@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Mon Article
+{% endblock title %}
+
+
+{% block content %}
+    <button class="back">
+        <a href="{% url 'posts:home' %} "> Retour </a>
+    </button>
+    
+    {% if request.user.is_authenticated %}
+        <button class="update">
+            <a href="{% url 'posts:update-article' post.slug %} "> Modifier </a>
+        </button>
+        <button class="delete">
+            <a href="{% url 'posts:delete-article' post.slug %}"> Supprimer </a>
+        </button>
+    {% endif %}
+        
+    <h2> {{post.title}} </h2>
+    <img src=" {{post.image.url}} " alt=" {{post.title}} ">
+    {% if post.published %}
+        <p> {{post.publier}}  le {{post.created_on}} </p>
+    {% else %}
+        <p> {{post.publier}} </p>
+    {% endif %}
+    <p> {{post.content}} </p>
+{% endblock content %}
+    
+    

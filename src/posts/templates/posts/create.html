@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}
+    Create Article
+{% endblock title %}
+    
+
+
+{% block content %}
+    <button class="back">
+        <a href="{% url 'posts:home' %} "> Retour </a>
+    </button>
+    <h2>Veillez entre le nouvelle article: </h2>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit"> {{valider}} </button>
+    </form>
+{% endblock content %}
+    

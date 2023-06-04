@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styl.css' %}">
+    <title> 
+    {% block title %}
+        
+    {% endblock title %}
+    </title>
+</head>
+<body>
+    <h1>Blog LETRONE</h1>
+    <section>
+        <dic class="container">
+            
+            {% block content %}
+                
+            {% endblock content %}
+                
+        </dic>
+    </section>
+    
+</body>
+</html>
